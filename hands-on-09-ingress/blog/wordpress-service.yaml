@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-svc
+  labels:
+    app: blog
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+  selector:
+    app: blog
+    tier: wordpress

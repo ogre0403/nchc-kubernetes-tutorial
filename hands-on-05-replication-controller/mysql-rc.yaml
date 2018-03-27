@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mysql-rc
+spec:
+  replicas: 3
+  selector:
+    app: blog
+    tier: mysql
+  template:
+    metadata:
+      name: mysql-pod
+      labels:
+        app: blog
+        tier: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.6
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: Password1234
+        volumeMounts:
+        - name: mysql-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-storage
+        hostPath:
+          path: /tmp/data
