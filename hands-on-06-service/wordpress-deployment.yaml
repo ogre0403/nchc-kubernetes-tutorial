@@ -10,9 +10,6 @@ spec:
       app: blog
       tier: wordpress
   replicas: 3
-  selector:
-    app: blog
-    tier: wordpress
   template:
     metadata:
       name: wordpress-pod
@@ -23,8 +20,8 @@ spec:
       containers:
       - name: wordpress
         image: wordpress:4.8-apache
-      env:
-      - name: WORDPRESS_DB_HOST
-        value: mysql-svc
-      - name: WORDPRESS_DB_PASSWORD
-        value: Password1234
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: mysql-svc
+        - name: WORDPRESS_DB_PASSWORD
+          value: Password1234
