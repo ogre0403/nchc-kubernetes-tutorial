@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-deployment
+  labels:
+    app: blog
+spec:
+  selector:
+    matchLabels:
+      app: blog
+      tier: wordpress
+  replicas: 3
+  selector:
+    app: blog
+    tier: wordpress
+  template:
+    metadata:
+      name: wordpress-pod
+      labels:
+        app: blog
+        tier: wordpress
+    spec:
+      containers:
+      - name: wordpress
+        image: wordpress:4.8-apache
+      env:
+      - name: WORDPRESS_DB_HOST
+        value: 127.0.0.1
+      - name: WORDPRESS_DB_PASSWORD
+        value: Password1234
