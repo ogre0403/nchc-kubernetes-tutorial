@@ -22,7 +22,7 @@ spec:
         image: wordpress:4.8-apache
         env:
         - name: WORDPRESS_DB_HOST
-          value: mysql-svc
+          value: mysql-svc:3360
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:

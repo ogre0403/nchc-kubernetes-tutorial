@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-svc
+  name: wordpress-svc
   labels:
     app: blog
 spec:
+  type: ClusterIP
   ports:
-    - port: 3306
+    - port: 80
   selector:
     app: blog
-    tier: mysql
+    tier: wordpress
