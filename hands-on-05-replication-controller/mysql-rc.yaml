@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: mysql-rc
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     app: blog
     tier: mysql
