@@ -1,0 +1,10 @@
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: foreign-web-ep
+subsets:
+- addresses:
+  - ip: 192.168.2.31
+  ports:
+  - port: 8000
+    protocol: TCP

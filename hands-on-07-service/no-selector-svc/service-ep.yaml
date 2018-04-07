@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: foreign-web-ep
+spec:
+  ports:
+  - port: 80
+    targetPort: 8000  
+    protocol: TCP
