@@ -6,3 +6,4 @@ data:
   mysql-cnf: |-
     [mysqld]
     port = 3360
+  mysql-port: "3360"
