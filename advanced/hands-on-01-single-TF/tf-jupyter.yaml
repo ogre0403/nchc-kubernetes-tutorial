@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: master
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: master
+    spec:
+      containers:
+      - name: jupyter
+        image: tensorflow/tensorflow:1.5.1
+        ports:
+        - name: jupyter
+          containerPort: 8888
+        env:
+        - name: TOKEN
+          value: "p@ssw0rd"
+        command: ["/bin/sh", "-c"]
+        args: ["rm -r /notebooks/*;
+                curl https://raw.githubusercontent.com/ogre0403/Distributed-GPU-TensorFlow-on-K8S/master/lab05/basic.ipynb -o basic.ipynb;
+                /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: tf-master-service
+  name: master
+spec:
+  selector:
+    app: master
+  ports:
+  - name: jupyter
+    port: 8888
+    targetPort: 8888
+
