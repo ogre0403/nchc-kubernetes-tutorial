@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ps
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ps
+    spec:
+      containers:
+      - name: jupyter
+        image: tensorflow/tensorflow:1.5.1
+        ports:
+        - name: jupyter
+          containerPort: 8888
+        env:
+        - name: TOKEN
+          value: ""
+        command: ["/bin/sh", "-c"]
+        args: ["rm -r /notebooks/*;
+                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/hands-on-03-Distributed-TF-different-Pod/ps.ipynb -o ps.ipynb;
+                /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ps-svc
+spec:
+  selector:
+    app: ps
+  type: NodePort
+  ports:
+  - name: jupyter
+    port: 8888
+    targetPort: 8888
+  - name: tensorflow 
+    port: 2222
+    targetPort: 2222
+

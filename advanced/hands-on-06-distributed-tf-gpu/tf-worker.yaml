@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: worker
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+      - name: jupyter
+        image: tensorflow/tensorflow:1.5.1-gpu
+        ports:
+        - name: jupyter
+          containerPort: 8888
+        env:
+        - name: TOKEN
+          value: ""
+        command: ["/bin/sh", "-c"]
+        args: ["rm -r /notebooks/*;
+                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/hands-on-03-Distributed-TF-different-Pod/worker.ipynb -o worker.ipynb;
+                /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: worker-svc
+spec:
+  selector:
+    app: worker
+  type: NodePort
+  ports:
+  - name: jupyter
+    port: 8888
+    targetPort: 8888
+  - name: tensorflow
+    port: 2222
+    targetPort: 2222
+
