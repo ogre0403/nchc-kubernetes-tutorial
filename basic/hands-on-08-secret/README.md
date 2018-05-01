@@ -1,4 +1,6 @@
-# Cretae base64 content
+#hands-on-08-secret
+
+## Cretae base64 content
 
 ```sh
 $ echo -n "Password1234" | base64
