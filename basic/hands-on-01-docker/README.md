@@ -1,7 +1,9 @@
-# Create from Docker
+# Hand-on-01-docker
+
+## Create from Docker
 
 ```sh
-$ docker pull wordpress
+$ docker pull wordpress:4.8-apache
 
 Using default tag: latest
 latest: Pulling from library/wordpress
@@ -15,7 +17,7 @@ Status: Downloaded newer image for wordpress:latest
 ```
 
 ```sh
-$ docker pull mysql
+$ docker pull mysql:5.6
 Using default tag: latest
 latest: Pulling from library/mysql
 2a72cbf407d6: Already exists
@@ -31,4 +33,10 @@ $ docker run --rm --name mysql01 -e MYSQL_ROOT_PASSWORD=Password1234 -d mysql:5.
 
 ```sh
 $ docker run --rm --name wordpress01 --link mysql01 -p 8080:80 -e WORDPRESS_DB_HOST=mysql01:3306 -e WORDPRESS_DB_PASSWORD=Password1234 -d wordpress:4.8-apache
+```
+
+## Cleanup
+
+```sh
+$ docker stop wordpress01 mysql01
 ```

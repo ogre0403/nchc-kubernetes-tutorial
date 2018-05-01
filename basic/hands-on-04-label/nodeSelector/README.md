@@ -21,6 +21,7 @@ spec:
   containers:
   - name: nginx
     image: nginx:1.7.9
+    imagePullPolicy: IfNotPresent
     ports:
     - containerPort: 80
   nodeSelector:
@@ -46,12 +47,12 @@ Events:
 
 ```sh
 # kubectl label node <nodename> <label_name>=<label_value>
-$ kubectl label node 192.168.2.31 hardware=high-memory
+$ kubectl label node ubuntu hardware=high-memory
 node "192.168.2.31" labeled
 
 $ kubectl get node --show-labels
 NAME       STATUS    ROLES     AGE       VERSION   LABELS
-minikube   Ready     <none>    6d        v1.8.0    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,hardware=high-memory,kubernetes.io/hostname=minikube
+ubuntu   Ready     <none>    6d        v1.8.0    beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,hardware=high-memory,kubernetes.io/hostname=ubuntu
 ```
 
 ## 再次查看目前 Pod 的狀態
@@ -79,5 +80,5 @@ Events:
 
 ```sh
 # kubectl label node <nodename> <labelname>-
-$ kubectl label node 192.168.2.31 hardware-
+$ kubectl label node ubuntu hardware-
 ```

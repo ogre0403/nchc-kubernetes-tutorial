@@ -8,5 +8,5 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: 192.168.2.31
-    path: /nfs-data
+    server: 10.0.2.4
+    path: /nfs/data2

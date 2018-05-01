@@ -37,7 +37,7 @@ deployment "nfs-provisioner" created
 ```
 
 ```sh
-$ kubectl create -f class.yaml
+$ kubectl create -f nfs-provider/storageclass.yaml
 storageclass "example-nfs" created
 ```
 

@@ -9,6 +9,7 @@ spec:
   containers:
   - name: wordpress
     image: wordpress:4.8-apache
+    imagePullPolicy: IfNotPresent
     env:
     - name: WORDPRESS_DB_HOST
       value: 127.0.0.1
