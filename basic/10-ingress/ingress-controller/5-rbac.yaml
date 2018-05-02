@@ -126,3 +126,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: nginx-ingress-serviceaccount
+    namespaces: default

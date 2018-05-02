@@ -10,10 +10,5 @@ spec:
       - backend:
           serviceName: wordpress-svc
           servicePort: 7070
-  - host: nginx.example.com
-    http:
-      paths:
-      - backend:
-          serviceName: nginx-svc
-          servicePort: 80
+
 
