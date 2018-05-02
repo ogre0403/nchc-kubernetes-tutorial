@@ -17,8 +17,8 @@ spec:
       containers:
       - name: wordpress
         image: wordpress:4.8-apache
-      env:
-      - name: WORDPRESS_DB_HOST
-        value: 127.0.0.1
-      - name: WORDPRESS_DB_PASSWORD
-        value: Password1234
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: 127.0.0.1
+        - name: WORDPRESS_DB_PASSWORD
+          value: Password1234
