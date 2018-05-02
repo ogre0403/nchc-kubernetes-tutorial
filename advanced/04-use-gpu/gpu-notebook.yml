@@ -20,7 +20,7 @@ spec:
           value: ""
         command: ["/bin/sh", "-c"]
         args: ["rm -r /notebooks/*;
-                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/hands-on-04-use-gpu/show_device.ipynb -o show_device.ipynb;
+                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/04-use-gpu/show_device.ipynb -o show_device.ipynb;
                 /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
         resources:
           limits:

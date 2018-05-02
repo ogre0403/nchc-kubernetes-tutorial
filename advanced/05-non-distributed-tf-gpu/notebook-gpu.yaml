@@ -20,7 +20,7 @@ spec:
           value: ""
         command: ["/bin/sh", "-c"]
         args: ["rm -r /notebooks/*;
-                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/hands-on-01-Non-Distributed-TF/Non-Distributed.ipynb -o Non-Distributed.ipynb;
+                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/01-Non-Distributed-TF/Non-Distributed.ipynb -o Non-Distributed.ipynb;
                 /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
         resources:
           limits:

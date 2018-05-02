@@ -20,7 +20,7 @@ spec:
           value: ""
         command: ["/bin/sh", "-c"]
         args: ["rm -r /notebooks/*;
-                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/hands-on-03-Distributed-TF-different-Pod/ps.ipynb -o ps.ipynb;
+                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/03-Distributed-TF-different-Pod/ps.ipynb -o ps.ipynb;
                 /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
 ---
 apiVersion: v1
