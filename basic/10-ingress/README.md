@@ -3,22 +3,13 @@
 ## create ingress
 
 ```sh
-$ kubectl create -f ingress-controller/1-default-backend.yaml
-$ kubectl create -f ingress-controller/2-configmap.yaml
-$ kubectl create -f ingress-controller/3-tcp-services-configmap.yaml
-$ kubectl create -f ingress-controller/4-udp-services-configmap.yaml
-$ kubectl create -f ingress-controller/5-rbac.yaml
-$ kubectl create -f ingress-controller/6-ingress-controller.yaml
-$ kubectl create -f ingress-controller/7-ingress-svc.yaml
+$ kubectl create -f ingress-controller/
 ```
 
 ## create mysql and wordpress 
 
 ```sh
-$ kubectl create -f blog/mysql-deployment.yaml
-$ kubectl create -f blog/mysql-service.yaml
-$ kubectl create -f blog/wordpress-deployment.yaml
-$ kubectl create -f blog/wordpress-service.yaml
+$ kubectl create -f blog/
 ```
 
 ## create ingress rule and /etc/hosts
@@ -67,4 +58,7 @@ $ curl nginx.exampe.com:<NodePort>
 $ kubectl delete -f ingress-controller
 $ kubectl delete -f nginx
 $ kubectl delete -f blog
+$ kubectl delete -f ingress.yaml
+
+$ rm -rf /tmp/data
 ```
