@@ -1,4 +1,4 @@
-# Schedule GPU Node
+# Use GPU
 
 ## Label your node
 
