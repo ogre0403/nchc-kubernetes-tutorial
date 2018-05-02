@@ -6,7 +6,7 @@ metadata:
     app: blog
 spec:
   ports:
-    - port: 3360
+    - port: 3306
   selector:
     app: blog
     tier: mysql
