@@ -94,4 +94,5 @@ $ kubectl delete pod wordpress-pod
 $ kubectl delete pod select-node-pod
 # kubectl label node <nodename> <labelname>-
 $ kubectl label node ubuntu hardware-
+$ rm -rf /tmp/data/
 ```

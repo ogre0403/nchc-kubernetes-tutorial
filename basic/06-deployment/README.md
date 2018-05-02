@@ -84,4 +84,5 @@ $ kubectl rollout undo deploy nginx-deployment --to-revision=1
 ```sh
 $ kubectl delete -f mysql-deployment.yaml
 $ kubectl delete -f wordpress-deployment.yaml
+$ rm -rf /tmp/data/
 ```

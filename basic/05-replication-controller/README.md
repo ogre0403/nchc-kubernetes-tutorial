@@ -31,4 +31,5 @@ wordpress-rc-l996d   1/1       Running   0          12s
 ```sh
 $ kubectl delete -f mysql-rc.yaml
 $ kubectl delete -f wordpress-rc.yaml
+$ rm -rf /tmp/data/
 ```

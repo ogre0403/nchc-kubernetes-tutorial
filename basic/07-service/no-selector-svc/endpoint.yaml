@@ -4,7 +4,7 @@ metadata:
   name: foreign-web-ep
 subsets:
 - addresses:
-  - ip: 192.168.2.31
+  - ip: 10.0.2.4
   ports:
   - port: 8000
     protocol: TCP

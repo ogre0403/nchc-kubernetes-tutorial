@@ -108,6 +108,7 @@ $ kubectl create -f storage-class/nfs-mount.yaml
 $ kubectl delete pod empty-dir-volume-pod
 $ kubectl delete pod host-path-volume-pod
 $ kubectl delete pod nfs-volume-pod
+$ rm -rf /tmp/data/
 
 $ kubectl delete pv nfs-pv
 $ kubectl delete pvc nfs-pvc
