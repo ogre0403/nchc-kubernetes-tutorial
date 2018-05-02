@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: select-node-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.7.9
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    hardware: high-memory
