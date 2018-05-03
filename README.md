@@ -21,9 +21,9 @@
 
 ## Advanced topics
 
-* [tensorflow](./advanced/01-Non-Distributed-TF)
-* [distributed tensorflow (same pod)](./advanced/02-Distributed-TF-same-Container)
-* [distributed tensorflow (different pod)](./advanced/03-Distributed-TF-different-Pod)
+* [tensorflow on kubernetes](./advanced/01-Non-Distributed-TF)
+* [distributed tensorflow in same pod](./advanced/02-Distributed-TF-same-Container)
+* [distributed tensorflow in different pod](./advanced/03-Distributed-TF-different-Pod)
 * [use gpu](./advanced/04-use-gpu)
 * [tensorflow with gpu](./advanced/05-non-distributed-tf-gpu)
 * [distributed tensorflow with gpu](./advanced/06-distributed-tf-gpu)

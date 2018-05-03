@@ -30,6 +30,7 @@ metadata:
 spec:
   selector:
     app: worker
+  type: NodePort
   ports:
   - name: jupyter
     port: 8888
