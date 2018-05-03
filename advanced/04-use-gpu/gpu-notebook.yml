@@ -21,6 +21,7 @@ spec:
         command: ["/bin/sh", "-c"]
         args: ["rm -r /notebooks/*;
                 curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/04-use-gpu/show_device.ipynb -o show_device.ipynb;
+                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/04-use-gpu/show_device.py -o show_device.py;
                 /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
         resources:
           limits:
@@ -29,12 +30,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    name: tf-master-service
   name: master
 spec:
   selector:
     app: master
+  type: NodePort
   ports:
   - name: jupyter
     port: 8888
