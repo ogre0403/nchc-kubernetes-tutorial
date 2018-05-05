@@ -21,6 +21,7 @@ spec:
         command: ["/bin/sh", "-c"]
         args: ["rm -r /notebooks/*;
                 curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/03-Distributed-TF-different-Pod/worker.ipynb -o worker.ipynb;
+                curl https://raw.githubusercontent.com/ogre0403/nchc-kubernetes-tutorial/master/advanced/06-distributed-tf-gpu/worker.py -o worker.py;
                 /run_jupyter.sh --allow-root --NotebookApp.token=${TOKEN};"]
         resources:
           limits:

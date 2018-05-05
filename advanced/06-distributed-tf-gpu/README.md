@@ -26,6 +26,10 @@ sess = tf.train.MonitoredTrainingSession(
 We can see the example use GPU device from log: 
 
 ```sh
+$ kubectl exec -ti ps-65487c86f4-tbwsb -- ipython /notebooks/ps.py
+
+$ kubectl exec -ti worker-5f68fc6c85-j45jk -- ipython /notebooks/worker.py
+
 $ kubectl logs worker-5f68fc6c85-j45jk
 ...
 report_uninitialized_variables/Const: (Const): /job:ps/replica:0/task:0/device:CPU:0
