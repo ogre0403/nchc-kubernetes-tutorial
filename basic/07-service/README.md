@@ -41,6 +41,32 @@ wordpress-nodeport-svc   NodePort    10.107.30.224    <none>        7070:30292/T
 wordpress-svc            ClusterIP   10.107.117.75    <none>        7070/TCP
 ```
 
+## HostNetowrk and HostPort
+
+Map container port 80 to host port 8088
+
+```sh
+$ kubectl create -f hostnetwork/hostport.yaml
+$ curl 127.0.0.1:8088
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+...
+```
+
+Access port 80
+
+```sh
+$ kubectl create -f hostnetwork/hostnetwork.yaml
+curl 127.0.0.1
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+...
+```
+
 ## Services without selectors example
 
 ```sh
@@ -80,6 +106,7 @@ $ kubectl delete svc foreign-web-ep
 $ kubectl delete svc mysql-svc
 $ kubectl delete svc wordpress-nodeport-svc
 $ kubectl delete svc wordpress-svc
+$ kubectl delete -f hostnetwork
 
 $ rm -rf /tmp/data/
 $ docker stop nginx179
