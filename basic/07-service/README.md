@@ -44,7 +44,7 @@ wordpress-svc            ClusterIP   10.107.117.75    <none>        7070/TCP
 ## Services without selectors example
 
 ```sh
-# 用docker 建立一個nginx，模擬位於外部的http服務
+# 用 docker 建立一個nginx，模擬位於外部的http服務
 $ docker run --name nginx179 -d --rm -p 8000:80  nginx:1.7.9
 
 $ curl 10.0.2.4:8000

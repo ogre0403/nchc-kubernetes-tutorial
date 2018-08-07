@@ -73,10 +73,10 @@ REVISION  CHANGE-CAUSE
 3         <none>
 
 # 回到上一個版本
-$ kubectl rollout undo  deploy nginx-deployment
+$ kubectl rollout undo  deploy wordpress-deployment 
 
 # 回到版本 1 
-$ kubectl rollout undo deploy nginx-deployment --to-revision=1
+$ kubectl rollout undo deploy wordpress-deployment  --to-revision=1
 ```
 
 ## Cleanup
